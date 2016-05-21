@@ -13,6 +13,6 @@ class Child3{
   `
 })
 export class Child3Component {
-  @Input() child3: Child3;
+  //@Input() child3: Child3;
   //@Input('master') masterName: string;
 }
