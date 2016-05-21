@@ -1,0 +1,14 @@
+[
+  {
+    "component": "Child1Component",
+    "template": "<child1></child1>"
+  },
+  {
+    "component": "Child1Component",
+    "template": "<child2></child2>"
+  },
+  {
+    "component": "Child3Component",
+    "template": "<child3></child3>"
+  }
+]
