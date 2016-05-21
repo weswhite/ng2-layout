@@ -12,7 +12,7 @@ class Child2{
     </div>
   `
 })
-export class Child1Component {
+export class Child2Component {
   @Input() child2: Child2;
   //@Input('master') masterName: string;
 }

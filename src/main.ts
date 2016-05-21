@@ -1,10 +1,5 @@
 import { bootstrap } from '@angular/platform-browser-dynamic';
-import { enableProdMode } from '@angular/core';
-import { LayoutAppComponent, environment } from './app/';
+import { ParentComponent } from './app/parent/parent.component';
 
-if (environment.production) {
-  enableProdMode();
-}
-
-bootstrap(LayoutAppComponent);
+bootstrap(ParentComponent);
 
