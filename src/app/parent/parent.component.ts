@@ -1,38 +1,46 @@
-import { Component, OnInit, Input, ComponentResolver, ViewContainerRef } from '@angular/core';
+import { Component, Input} from '@angular/core';
 
-import { Child1Component } from '../children/child1.component'
-import { Child2Component } from '../children/child2.component'
-import { Child3Component } from '../children/child3.component'
-import { PrimeTableComponent } from '../tables/primeng/primeng-demo.component'
+import { Loader } from './component-loader.component'
 
-import { ParentService } from './parent.service'
+export class Child{
+  component: string;
+  template: string;
+}
 
 @Component({
   selector: 'parent',
-  directives: [Child1Component, Child2Component, Child3Component, PrimeTableComponent],
-  providers: [ParentService],
+  directives: [Loader],
   template: `
     <style>
       .parent{
         background-image: linear-gradient(141deg, #8ecb45 0%, #97cd76 71%, #96d885 100%);
         width: 100%;
-        height: 200px;
+        height: 1000px;
       }
     </style>
-    <div class="parent"></div>
+    <div class="parent">
+      <div *ngFor="let child of children">
+        <loader [type]="child"></loader>
+      </div>
+    </div>
   `
 })
 export class ParentComponent {
-  constructor(private parentService:ParentService, public children: any, viewContainer: ViewContainerRef, private componentResolver: ComponentResolver) {
+  @Input() children;
 
-    this.children = parentService.getChildren();
-
-    for(var i = 0; i < children.length; i++) {
-      this.componentResolver.resolveComponent(children[i].component)
-      .then(componentFactory => {
-        const ctxInjector = viewContainer.injector;
-        return viewContainer.createComponent(componentFactory, 0, ctxInjector);
-      })
-    }
-  }
+  // children: any;
+  //
+  // constructor(private parentService:ParentService, viewContainer: ViewContainerRef, private componentResolver: ComponentResolver) {
+  //
+  //   this.children = parentService.getChildren();
+  //   console.log(this.children);
+  //
+  //   for(var i = 0; i < this.children.length; i++) {
+  //     this.componentResolver.resolveComponent(<any>this.children[i].component)
+  //     .then(componentFactory => {
+  //       const ctxInjector = viewContainer.injector;
+  //       return viewContainer.createComponent(componentFactory, 0, ctxInjector);
+  //     })
+  //   }
+  // }
 }
