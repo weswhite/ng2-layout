@@ -2,6 +2,6 @@
 
 npm install
 
-ng serve 
+ng serve (depends on angular-cli - npm install angular-cli)
 
 localhost:4200

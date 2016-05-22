@@ -3,5 +3,5 @@ import { ParentComponent } from './app/parent/parent.component';
 import { HTTP_PROVIDERS } from '@angular/http';
 import { PrimeTableComponent } from './app/tables/primeng/primeng-demo.component'
 
-bootstrap(PrimeTableComponent, [HTTP_PROVIDERS]);
+bootstrap( ParentComponent, [HTTP_PROVIDERS]);
 

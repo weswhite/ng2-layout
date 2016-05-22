@@ -3,12 +3,13 @@ import { Component, OnInit, Input, ComponentResolver, ViewContainerRef } from '@
 import { Child1Component } from '../children/child1.component'
 import { Child2Component } from '../children/child2.component'
 import { Child3Component } from '../children/child3.component'
+import { PrimeTableComponent } from '../tables/primeng/primeng-demo.component'
 
 import { ParentService } from './parent.service'
 
 @Component({
   selector: 'parent',
-  directives: [Child1Component, Child2Component, Child3Component],
+  directives: [Child1Component, Child2Component, Child3Component, PrimeTableComponent],
   providers: [ParentService],
   template: `
     <style>
@@ -22,7 +23,7 @@ import { ParentService } from './parent.service'
   `
 })
 export class ParentComponent {
-  constructor(private parentService:ParentService, private children: any, viewContainer: ViewContainerRef, private componentResolver: ComponentResolver) {
+  constructor(private parentService:ParentService, public children: any, viewContainer: ViewContainerRef, private componentResolver: ComponentResolver) {
 
     this.children = parentService.getChildren();
 
