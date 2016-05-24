@@ -27,20 +27,4 @@ export class Child{
 })
 export class ParentComponent {
   @Input() children;
-
-  // children: any;
-  //
-  // constructor(private parentService:ParentService, viewContainer: ViewContainerRef, private componentResolver: ComponentResolver) {
-  //
-  //   this.children = parentService.getChildren();
-  //   console.log(this.children);
-  //
-  //   for(var i = 0; i < this.children.length; i++) {
-  //     this.componentResolver.resolveComponent(<any>this.children[i].component)
-  //     .then(componentFactory => {
-  //       const ctxInjector = viewContainer.injector;
-  //       return viewContainer.createComponent(componentFactory, 0, ctxInjector);
-  //     })
-  //   }
-  // }
 }

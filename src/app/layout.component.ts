@@ -13,5 +13,5 @@ import { Child3Component } from './children/child3.component';
   styleUrls: ['layout.component.css']
 })
 export class LayoutAppComponent {
-  types = [Child1Component, Child2Component, Child3Component];
+  types = [Child1Component, Child2Component, Child3Component ];
 }
